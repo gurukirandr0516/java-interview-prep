@@ -14,6 +14,8 @@ public class FindDuplicateElements {
                 .filter(n->!uniqueElements.add(n))
                         .collect(Collectors.toSet());
 
-        System.out.println("Duplicate Elements: " + duplicates);
+        System.out.println("Find Duplicate Elements: " + duplicates);
+
+
     }
 }
