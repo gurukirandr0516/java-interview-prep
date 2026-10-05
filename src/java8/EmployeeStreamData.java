@@ -85,27 +85,5 @@ public class EmployeeStreamData {
         maxSalaryByDept.forEach((dept, salary) ->
                 System.out.println(dept + " -> " + salary));
 
-
-        // 3. Employee with Highest Salary Per Department
-
-        Map<String, Employee> highestEmployeeByDept =
-                employees.stream()
-                        .collect(Collectors.groupingBy(
-                                Employee::getDepartment,
-                                Collectors.collectingAndThen(
-                                        Collectors.maxBy(
-                                                Comparator.comparing(
-                                                        Employee::getSalary)),
-                                        Optional::get
-                                )
-                        ));
-
-        System.out.println("\nHighest Salary Employee Per Department");
-
-        highestEmployeeByDept.forEach((dept, emp) ->
-                System.out.println(dept + " -> "
-                        + emp.getName()
-                        + " : "
-                        + emp.getSalary()));
     }
 }
